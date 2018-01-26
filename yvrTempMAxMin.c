@@ -14,7 +14,6 @@ int main(void) {
 	double sixPM;
 	double minimum = 10;
 	double maximum = 0;
-	double nextVal;
 
 	inFile = fopen(INPUTFILE, "r");
 
