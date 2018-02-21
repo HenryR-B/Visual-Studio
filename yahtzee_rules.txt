@@ -1,0 +1,121 @@
+-------------------------------------------------------------------------    
+Yahtzee Classic - Game Rules - Hasbro Gaming    
+-------------------------------------------------------------------------    
+
+How to Win?  
+Roll dice to get the highest score after all 13 rounds.  
+
+-------------------------------------------------------------------------
+Basic Rules 
+
+ 1. Roll your dice to rack up the best possible score. 
+ 2. Decide which dice combo you're going for. 
+ 3. After each turn, write your score in one empty box on the score card. 
+
+-------------------------------------------------------------------------
+YOUR 1ST ROLL 
+
+ - Roll all 5 dice. 
+ - If you get the exact combo you want, mark your score card right away. 
+ - Otherwise, continue with your 2nd roll. 
+
+YOUR 2ND ROLL 
+
+ - Set aside any 'keepers' and re-roll the rest. 
+ - Hate them all? Re-roll them all!
+ - If you get the exact combo you need, mark your score card. 
+ - Otherwise, continue with your 3rd roll. 
+
+YOUR 3RD AND FINAL ROLL
+ 
+ If you still haven't nailed a combo, or just want to maximize your score: 
+ - Roll some or all of your dice (as above), even any 'keepers' you might have set aside. 
+ - You must enter a score at the end of this roll, whether or not you like your dice! 
+ - If your roll doesn't suit any of your empty boxes, you have to enter a ZERO somewhere. 
+ - BUT scoring even a single die value is better than a ZERO! See inside for SCORING and  
+   the back page for some top strategy tips. 
+
+------------------------------------------------------------------------------------------
+SCORING YOUR 13 ROLLS 
+
+ - REMEMBER! You can complete any box in any section in any order but you MUST fill in    
+   one box each turn.   
+ - Now, look at a score card. You'll see it's split into two sections: the upper for dice    
+   face values and lower for the set combos.   
+
+------------------------------------------------------------------------------------------
+UPPER SECTION    
+
+ - The upper section scores only the same dice, from 1 to 6.   
+ - Add up the dice of the same number to get your score.    
+   (You can just count a single die - it's better than a ZERO.)   
+ - eg. three 3s is 9 points in the threes box, four 1s is 4 points in the ones box   
+
+ BONUS: If you score over 63 points in the upper section, you get a bonus 35 points!   
+	To get to the bonus, you just need to roll 3 of each dice. 
+
+------------------------------------------------------------------------------------------
+LOWER SECTION   
+
+ The lower section scores the various dice combos:   
+
+  - 3 of a Kind -> TOTAL dice score   
+      - 3 of the same dice   
+      - Your score is the face value of all 5 dice.   
+      - eg. 3 twos, a 5 and a 6 - score is 17   
+
+  - 4 of a Kind -> TOTAL dice score    
+      - 4 of the same dice   
+      - Your score is the face value of all 5 dice.   
+      - eg. 4 fives, and a 2 -> score is 22   
+ 
+  - Small Straight  ->  SET score 30 points   
+      - Any 4 consecutive dice   
+      - Worth 30 points, regardless of the face value of the dice. 
+   
+  - Large Straight  ->  SET score 40 points   
+      - Any 5 consecutive dice   
+      - Worth 40 points, regardless of the face value of the dice.  
+ 
+  - Full House  ->  SET score 25 points   
+      - Any 3 of a Kind and any Pair   
+      - Worth 25 points, regardless of the face value of the dice.   
+  - Chance     ->  TOTAL dice score   
+      - Add up the face value of any roll   
+      - No combos necessary. CHANCE is a one-off, use anytime, catch-all safety    
+        net when you can't score anywhere else and don't want to enter a ZERO.   
+
+  - YAHTZEE!   ->  SET score 50 points   
+      - 5 of a Kind   
+      - Top score. 50 points, regardless of the face value of the dice.   
+
+------------------------------------------------------------------------------------------
+Other Info   
+
+If you don't have a score to enter at the end of your turn, you must enter ZERO    
+in one of your empty boxes. Once a box has been filled in, it cannot be used again.   
+
+------------------------------------------------------------------------------------------
+YAHTZEE BONUS!   
+
+If you roll multiple YAHTZEES, you can rack up a seriously high score.   
+One extra YAHTZEE = 100 bonus points!   
+Put an (X) in the YAHTZEE bonus box AND fill in one of your empty boxes on the score card   
+as follows:   
+
+ 1. Score the total of the 5 dice in the appropriate upper section box.   
+ 2. If that box is full, fill the 3 of a Kind or 4 of a Kind boxes in the lower section with your   
+    5 dice total.   
+ 3. If they too are full, use your Chance or ‘steal' any one of the combos with your   
+    5 of a Kind dice. Score as normal, e.g. Full House is 25 points.   
+ 4. If you've already scored ZERO in your YAHTZEE box, you can't get a YAHTZEE bonus of   
+    100 points. (Sorry! Try not to score ZERO in your YAHTZEE box!) But you can still score as   
+    detailed above in steps 1-3.   
+
+----------------------------------------------------------------------------------------------
+WINNING  
+
+ - The player with the highest GRAND total at the end of all 13 rounds is the winner.  
+ - Don't forget to add your 35-point bonus if you score over 63 points in the upper section. 
+
+----------------------------------------------------------------------------------------------
