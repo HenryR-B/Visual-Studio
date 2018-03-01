@@ -60,18 +60,15 @@ void playYahtzee(void) {
 		GameRules = fopen(YAHTZEE_RULES, "r");
 		printFile(GameRules);
 	}
-	printf("Press any key to continue, when you are ready\n ");
-	system("PAUSE > nul");
+
 	/* Ask user if they want to see the instructions and then print the file if Yes */
-	printf("\nDo you want read the tutorial/instructions (ie. are you familiar with this particular system)? (Y/N) ");
+	printf("\nDo you want read the tutorial/instructions? (Y/N) ");
 	checkValidInput(buffer);
 	choice = buffer[0];
 	if (choice == 'Y' || choice == 'y') {
 		tutorial = fopen(YAHTZEE_INSTR, "r");
 		printFile(tutorial);
 	}
-	printf("Press any key to continue, when you are ready\n ");
-	system("PAUSE > nul");
 	printf("\n---------------------------------------------------------------------------------------\n");
 	
 	/* Check for the number of players */
@@ -194,12 +191,12 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 
 	/* otherwise, allow the user to roll two more times, or until the user wants to use their roll for an option */
 	while (count <= 2 && choice == FALSE) {
-		printf("\nDo you want to keep any dice? (Y/N) ");
+		printf("\nDo you want to re-roll all dice? (Y/N) ");
 		checkValidInput(buffer);
 		keep = buffer[0];
 		
 		/* if the user wants to keep any dice, call the function to roll the dice they want */
-		if (keep == 'Y' || keep == 'y') {
+		if (keep != 'Y' && keep != 'y') {
 			rollNotKeepers(currentPlayer, currentDice);
 
 			/* if the user has not rolled twice yet, ask if they want to choose an option, etc. */
