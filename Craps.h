@@ -29,7 +29,7 @@ int rollDie(void);
 * Returns: amount of money entered by user (a positive, integer dollar value)
 */
 int getWallet(void) {
-	int startCash;
+	int startCash = 0;
 	int count = 0;
 
 	/* gets the amount in the users wallet, and it must be greater than MIN_BET */
@@ -37,8 +37,8 @@ int getWallet(void) {
 		if (count++ > 0)
 			printf("Please make sure the amount is greater than the minimum bet.\n\n");
 
-		printf("How much money do you have to play with?\n");
-		scanf("%d", &startCash);
+		printf("\nHow much money do you have to play with (Greater than 5$)? ");
+		startCash = checkChar();
 	} while (startCash < MIN_BET);
 
 	return startCash;

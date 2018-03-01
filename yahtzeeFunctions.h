@@ -17,6 +17,7 @@
 #define BONUS_UPPER_TOTAL	35
 #define BONUS_CUTOFF		63
 #define BONUS_SECTION 2
+#define BUF_SIZE	1000
 
 /* function prototypes */
 int indexOfSmallest(int data[][MAX_DICE], int size, int startIndex, int currentPlayer);
@@ -34,6 +35,8 @@ int checkFullHouse(int option, int currentPlayer, int currentDice[][MAX_DICE], i
 int check_3_4_5_Kind(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS], int upperTotal[][NUM_PLAYERS], int lowerTotal[]);
 int checkStraight(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS]);
 int checkChance(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS]);
+int inputString(char string[BUF_SIZE], int length);
+int checkValidInput(char input[BUF_SIZE]);
 
 /*
  * Funtion dataOfLargest - finds the largest value in the array from startIndex to the end
@@ -192,11 +195,13 @@ void rollNotKeepers(int currentPlayer, int currentDice[][MAX_DICE]) {
 	int count;
 	char keep;
 	int keepers[MAX_DICE] = { FALSE };
+	char buffer[BUF_SIZE];
 
 	/* asks user if they want to keep each dice individually, and it is set as a 'keeper' */
 	for (index = 0; index < MAX_DICE; index++) {
 		printf("\nDo you want to keep dice #%d? (Y/N) ", index + 1);
-		keep = checkValidInput();
+		checkValidInput(buffer);
+		keep = buffer[0];
 		if (keep == 'Y' || keep == 'y') {
 			keepers[index] = TRUE;
 		}
@@ -261,9 +266,11 @@ int chooseOption(void) {
 int chooseCombination(void) {
 	char input;
 	int choice;
+	char buffer[BUF_SIZE];
 
 	printf("\n\nDo you want to choose an option (eg. Three of a Kind) for this roll? (Y/N): ");
-	input = checkValidInput();
+	checkValidInput(buffer);
+	input = buffer[0];
 
 	if (input == 'Y' || input == 'y') {
 		choice = TRUE;
@@ -526,7 +533,6 @@ int check_3_4_5_Kind(int option, int currentPlayer, int currentDice[][MAX_DICE],
  */
 int checkStraight(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS]) {
 	int count = 0;
-	int temp;
 	int lastCount = 0;
 	int points;
 	int lastIndex = MAX_DICE - 1;
@@ -604,4 +610,43 @@ int checkChance(int option, int currentPlayer, int currentDice[][MAX_DICE], int 
 	usedOptions[currentPlayer][option - 1] = TRUE;
 
 	return points;
+}
+
+/*
+ * Function inputString - gets (a) input character(s) from user and when user presses enter, stores the newline character as a null byte '\0'
+ * Param: string - array of input character(s)
+ * Param: length - max length of string
+ * Returns: amount of letters entered
+ */
+int inputString(char string[BUF_SIZE], int length) {
+	int x;
+
+	fgets(string, length, stdin);
+	for (x = 0; x <= length; x++) {
+		if (string[x] == '\n') {
+			string[x] = '\0';
+			break;
+		}
+	}
+
+	return x;
+}
+
+/*
+ * Function checkValidInput - gets the input from user (a character) and repeats if user enters more than one or none at all
+ * Param: input - the array for the input character(s)
+ * Returns: the array of a single character (at the end of the cycle, it will be one character)
+ */
+int checkValidInput(char input[BUF_SIZE]) {
+	int count;
+	int letters;
+	count = 0;
+
+	do {
+		if (count > 0)
+			printf("\nPlease enter exactly ONE character: ");
+		letters = inputString(input, BUF_SIZE);
+
+		count++;
+	} while (letters != 1);
 }

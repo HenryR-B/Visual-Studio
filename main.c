@@ -18,6 +18,7 @@ int main(void) {
 	int start;
 	char choice;
 	char play;
+	char buffer[BUF_SIZE];
 	
 	/* check which game the user would like to play */
 	do {
@@ -26,7 +27,6 @@ int main(void) {
 		printf("1. Craps\n");
 		printf("2. Yahtzee\n");
 		printf("Your response: ");
-		/* enter a number and checks if it is not a character */
 		start = checkChar();
 		
 		/* checks that the number entered was in the range of 0 to 2 inclusive */
@@ -46,16 +46,18 @@ int main(void) {
 			case 1:
 				/* play craps */
 				printf("\nAre you ready to start your game of craps? (Y/N) ");
-				input = checkValidInput(input);
+				input = checkValidInput(buffer);
 
 
 				if (input == 'Y' || input == 'y') {
 					walletCash = getWallet();
 					playCraps(walletCash);
+					play = 'N';
 				}
 				else {
 					printf("\nWould you like to return to the main menu? (Y/N) ");
-					play = checkValidInput(play);
+					checkValidInput(buffer);
+					play = buffer[0];
 
 
 					if (play == 'Y' || play == 'y')
@@ -64,13 +66,15 @@ int main(void) {
 						/* get the users amount of money to play with */
 						walletCash = getWallet();
 						playCraps(walletCash);
+						play = 'N';
 					}
 				}
 				break;
 			case 2:
 				/* play yahtzee */
 				printf("\nAre you ready to play your game of yahtzee? (Y/N) ");
-				input = checkValidInput();
+				checkValidInput(buffer);
+				input = buffer[0];
 
 				if (input == 'Y' || input == 'y') {
 					playYahtzee();
@@ -78,7 +82,8 @@ int main(void) {
 				}
 				else {
 					printf("\nWould you like to return to the main menu? (Y/N) ");
-					play = checkValidInput();
+					checkValidInput(buffer);
+					play = buffer[0];
 
 					if (play == 'Y' || play == 'y')
 						break;
@@ -95,7 +100,8 @@ int main(void) {
 		}
 		else {
 			printf("Do you want to play again? (Y/N) ");
-			choice = checkValidInput();
+			checkValidInput(buffer);
+			choice = buffer[0];
 		}
 		printf("\n");
 		/* do this until the user wants to quit. */

@@ -27,7 +27,6 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 int performOption(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS], int upperTotal[][NUM_PLAYERS], int lowerTotal[]);
 void calculateTotal(int numPlayers, int upperTotal[][NUM_PLAYERS], int lowerTotal[], int grandTotal[], int allPlayers[]);
 void printFile(FILE * file);
-int checkValidInput();
 
 /*
  * Function playYahtzee - plays yahtzee with the user.
@@ -49,10 +48,14 @@ void playYahtzee(void) {
 	int currentPlayer = 0;
 	int totalPoints[NUM_PLAYERS] = { 0 };
 	char playerName[NUM_PLAYERS][MAX_LENGTH];
+	char buffer[BUF_SIZE];
+
+	srand((unsigned)time(NULL));
 	
 	/* Ask user if they want to see the rules and then print the file if Yes */
 	printf("\nDo you want to read the rules for yahtzee? (Y/N) ");
-	choice = checkValidInput();
+	checkValidInput(buffer);
+	choice = buffer[0];
 	if (choice == 'Y' || choice == 'y') {
 		GameRules = fopen(YAHTZEE_RULES, "r");
 		printFile(GameRules);
@@ -61,7 +64,8 @@ void playYahtzee(void) {
 	system("PAUSE > nul");
 	/* Ask user if they want to see the instructions and then print the file if Yes */
 	printf("\nDo you want read the tutorial/instructions (ie. are you familiar with this particular system)? (Y/N) ");
-	choice = checkValidInput();
+	checkValidInput(buffer);
+	choice = buffer[0];
 	if (choice == 'Y' || choice == 'y') {
 		tutorial = fopen(YAHTZEE_INSTR, "r");
 		printFile(tutorial);
@@ -170,9 +174,9 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 	int totalPoints;
 	int currentDice[NUM_PLAYERS][MAX_DICE];
 	char keep;
+	char buffer[BUF_SIZE];
 
 	/* rolls the die 5 times, and puts it into the slots for the current player */
-	srand((unsigned)time(NULL));
 	printf("\nFirst roll:\n");
 	for (int index = 0; index < MAX_DICE; index++) {
 		currentDice[currentPlayer][index] = rollDie();
@@ -191,7 +195,8 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 	/* otherwise, allow the user to roll two more times, or until the user wants to use their roll for an option */
 	while (count <= 2 && choice == FALSE) {
 		printf("\nDo you want to keep any dice? (Y/N) ");
-		keep = checkValidInput();
+		checkValidInput(buffer);
+		keep = buffer[0];
 		
 		/* if the user wants to keep any dice, call the function to roll the dice they want */
 		if (keep == 'Y' || keep == 'y') {
@@ -208,7 +213,6 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 		}
 		else {
 			/* otherwise, roll all dice again, and print the dice */
-			srand((unsigned)time(NULL));
 			printf("\n\nYou have rolled: ");
 			for (int index = 0; index < MAX_DICE; index++) {
 				currentDice[currentPlayer][index] = rollDie();
@@ -377,23 +381,4 @@ void printFile(FILE * file) {
 		/* close the file */
 		fclose(file);
 	}
-}
-
-int checkValidInput() {
-	int count = 0;
-	char rest;
-	char input;
-	char buffer[BUF_SIZE];
-
-	do {
-		if (count > 0)
-			printf("\nPlease enter exactly ONE character: ");
-		if (fgets(buffer, BUF_SIZE, stdin) == NULL) {
-			perror("Error in fgets()");
-			exit(EXIT_FAILURE);
-		}
-		count++;
-	} while ((sscanf(buffer, "%c%c", &input, &rest) != 2) || (rest != '\n'));
-
-	return input;
 }
