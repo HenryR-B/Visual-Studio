@@ -36,7 +36,7 @@ int check_3_4_5_Kind(int option, int currentPlayer, int currentDice[][MAX_DICE],
 int checkStraight(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS]);
 int checkChance(int option, int currentPlayer, int currentDice[][MAX_DICE], int usedOptions[][OPTIONS]);
 int inputString(char string[BUF_SIZE], int length);
-int checkValidInput(char input[BUF_SIZE]);
+void checkValidInput(char input[BUF_SIZE]);
 
 /*
  * Funtion dataOfLargest - finds the largest value in the array from startIndex to the end
@@ -637,7 +637,7 @@ int inputString(char string[BUF_SIZE], int length) {
  * Param: input - the array for the input character(s)
  * Returns: the array of a single character (at the end of the cycle, it will be one character)
  */
-int checkValidInput(char input[BUF_SIZE]) {
+void checkValidInput(char input[BUF_SIZE]) {
 	int count;
 	int letters;
 	count = 0;

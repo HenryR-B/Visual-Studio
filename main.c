@@ -46,7 +46,8 @@ int main(void) {
 			case 1:
 				/* play craps */
 				printf("\nAre you ready to start your game of craps? (Y/N) ");
-				input = checkValidInput(buffer);
+				checkValidInput(buffer);
+				input = buffer[0];
 
 
 				if (input == 'Y' || input == 'y') {
