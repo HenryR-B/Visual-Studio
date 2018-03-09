@@ -218,10 +218,12 @@ int playRound(int round, int currentPlayer, int usedOptions[][OPTIONS], int uppe
 			printDice(currentDice, currentPlayer);
 
 			/* ask user if they want to choose an option, etc. */
-			choice = chooseCombination();
-			if (choice == TRUE) {
-				option = chooseOption();
-				totalPoints = performOption(option, currentPlayer, currentDice, usedOptions, upperTotal, lowerTotal);
+			if (count != 2) {
+				choice = chooseCombination();
+				if (choice == TRUE) {
+					option = chooseOption();
+					totalPoints = performOption(option, currentPlayer, currentDice, usedOptions, upperTotal, lowerTotal);
+				}
 			}
 		}
 		count++;
