@@ -336,6 +336,8 @@ int checkFullHouse(int option, int currentPlayer, int currentDice[][MAX_DICE], i
 	int valueFWD;
 	int valueREV;
 	int points;
+
+	char arr[] = {26};
 	int lastIndex = MAX_DICE - 1;
 	int firstIndex = 0;
 
