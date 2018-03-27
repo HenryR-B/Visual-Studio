@@ -7,3 +7,4 @@ It also checks for errors, essentially sanitizing user inputs.
 The code as well as the executable (.exe) file are available in this *Yahtzee-Game--Visual-Studio* Repository.
 
 Have Fun!
+          ~ Henry Bryant
