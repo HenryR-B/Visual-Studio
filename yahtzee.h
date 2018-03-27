@@ -153,7 +153,7 @@ void playYahtzee(void) {
 	}
 }
 
-/*n
+/*
  * Funtion playRound - plays a single round of yahtzee with user
  * Param: round - the current round
  * Param: currentPlayer - the current player who is taking their turn
